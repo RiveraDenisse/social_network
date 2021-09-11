@@ -17,4 +17,7 @@ mongoose.connect(
     useUnifiedTopology: true,
   }
 );
+
+//Use this to log mongo queries being executed!
+mongoose.set("debug", true);
 app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
