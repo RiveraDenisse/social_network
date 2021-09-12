@@ -10,11 +10,11 @@ const userController = {
     User.find({})
       .populate({
         path: "thoughts",
-        select: "-__v ",
+        select: "-__v -reactionCount -_id",
       })
       .populate({
         path: "friends",
-        select: "-__v -thoughts",
+        select: "-__v -email -_id -thoughts",
       })
       .select("-__v")
       .then((dbUserData) => res.json(dbUserData))
